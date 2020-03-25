@@ -35,7 +35,13 @@
 
             }
             down(){
-
+                let that = this;
+                this.box.onmousedown = function(ev){
+                    that.disX = ev.pageX - this.offsetLeft;
+                    that.disY = ev.pageY - this.offsetTop;
+                    that.move();
+                    that.up();
+                }
             }
             move(){
 
